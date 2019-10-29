@@ -22,7 +22,7 @@ public class Main {
 
         Main in = new Main();
 
-        in.mergeTwoLists1(a, b);
+        in.mergeTwoLists2(a, b);
     }
 
     public ListNode mergeTwoLists1(ListNode l1, ListNode l2) {
@@ -35,12 +35,12 @@ public class Main {
 
         while (l1 != null || l2 != null) {
             if (l1 == null || l1.val > l2.val) {
-                temp = l2;
-                temp.next = temp;
+                temp.next = l2;
+                temp = temp.next;
                 l2 = l2.next;
             } else {
-                temp = l1;
-                temp.next = temp;
+                temp.next = l1;
+                temp = temp.next;
                 l1 = l1.next;
             }
         }
